@@ -16,6 +16,13 @@ This repository provides a ready‑to‑use hybrid routing configuration that co
 bash install.sh [target-dir]
 ```
 Copies `litellm_config.yaml` and `setenv` to `target-dir` (defaults to `$HOME`).
+
+### Quick one‑line setup
+```bash
+curl -L https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/litellm_config.yaml -o /tmp/litellm_config.yaml && \
+curl -L https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/setenv -o /tmp/setenv
+```
+Replace `/tmp` with your desired directory (e.g., `$HOME/.config/litellm`).
 ## Supported backends
 - **OpenRouter** – uses Anthropic‑compatible API contract via the `anthropic/` prefix.
 - **LM Studio (local)** – runs on `http://localhost:1234` and is exposed through LiteLLM. See [doc/LOCAL_AI.md](doc/LOCAL_AI.md) for local hardware/model details.
