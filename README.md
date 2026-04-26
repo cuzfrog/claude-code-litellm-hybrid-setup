@@ -13,12 +13,12 @@ This repository provides a ready‑to‑use hybrid routing configuration that co
 - See the [LiteLLM quick‑start guide](https://docs.litellm.ai/docs/proxy/quick_start) for installation details.
 ## Installation
 
-Clone the repo and run `install.sh` from your target directory:
+Run from your target directory. Files are saved with their original names.
+
 ```bash
-cd /your/target/dir
-bash /path/to/repo/install.sh
+curl -LO https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/litellm_config.yaml \
+     -O https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/setenv
 ```
-Copies `litellm_config.yaml` and `setenv` into the current directory.
 
 ## Supported backends
 - **OpenRouter** – uses Anthropic‑compatible API contract via the `anthropic/` prefix.
