@@ -13,16 +13,14 @@ This repository provides a ready‑to‑use hybrid routing configuration that co
 - See the [LiteLLM quick‑start guide](https://docs.litellm.ai/docs/proxy/quick_start) for installation details.
 ## Installation
 
-Run from your target directory. Files are saved with their original names.
-
 ```bash
 curl -LO https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/litellm_config.yaml \
      -O https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/setenv
 ```
 
-## Supported backends
+## Supported backend examples
 - **OpenRouter** – uses Anthropic‑compatible API contract via the `anthropic/` prefix.
-- **LM Studio (local)** – runs on `http://localhost:1234` and is exposed through LiteLLM. See [doc/LOCAL_AI.md](doc/LOCAL_AI.md) for local hardware/model details.
+- **LM Studio (local)** – runs on `http://localhost:1234` and is exposed through LiteLLM. See [doc/LOCAL_AI.md](doc/LOCAL_AI.md) for a local hardware/model example.
 
 ## Config
 - The `anthropic/` prefix forces LiteLLM to speak the Anthropic API contract required by Claude Code.
