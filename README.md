@@ -12,17 +12,14 @@ This repository provides a ready‑to‑use hybrid routing configuration that co
 - WSL/Linux environment (Windows not officially supported)
 - See the [LiteLLM quick‑start guide](https://docs.litellm.ai/docs/proxy/quick_start) for installation details.
 ## Installation
-```bash
-bash install.sh [target-dir]
-```
-Copies `litellm_config.yaml` and `setenv` to `target-dir` (defaults to `$HOME`).
 
-### Quick one‑line setup
+Clone the repo and run `install.sh` from your target directory:
 ```bash
-curl -L https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/litellm_config.yaml -o /tmp/litellm_config.yaml && \
-curl -L https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/setenv -o /tmp/setenv
+cd /your/target/dir
+bash /path/to/repo/install.sh
 ```
-Replace `/tmp` with your desired directory (e.g., `$HOME/.config/litellm`).
+Copies `litellm_config.yaml` and `setenv` into the current directory.
+
 ## Supported backends
 - **OpenRouter** – uses Anthropic‑compatible API contract via the `anthropic/` prefix.
 - **LM Studio (local)** – runs on `http://localhost:1234` and is exposed through LiteLLM. See [doc/LOCAL_AI.md](doc/LOCAL_AI.md) for local hardware/model details.
