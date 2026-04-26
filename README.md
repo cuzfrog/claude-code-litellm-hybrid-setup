@@ -19,7 +19,7 @@ curl -LO https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-se
 ```
 
 ## Supported backend examples
-- **OpenRouter** – uses Anthropic‑compatible API contract via the `anthropic/` prefix.
+- **OpenRouter** – uses Anthropic‑compatible API contract via the `anthropic/` prefix. Requires `OPENROUTER_API_KEY` to be set in the environment.
 - **LM Studio (local)** – runs on `http://localhost:1234` and is exposed through LiteLLM. See [doc/LOCAL_AI.md](doc/LOCAL_AI.md) for a local hardware/model example.
 
 ## Config
