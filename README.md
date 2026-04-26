@@ -3,15 +3,22 @@
 ## What this is
 This repository provides a ready‑to‑use hybrid routing configuration that connects Claude Code to a LiteLLM proxy, which in turn can route requests to multiple back‑ends such as OpenRouter or a local LM Studio instance.
 
+## Screenshots
+![Claude custom models](/doc/Claude-custom-models.png)
+
 ## Prerequisites
 - Python 3.9+ and `pip`
 - LiteLLM package (`pip install litellm`)
 - WSL/Linux environment (Windows not officially supported)
 - See the [LiteLLM quick‑start guide](https://docs.litellm.ai/docs/proxy/quick_start) for installation details.
-
+## Installation
+```bash
+bash install.sh [target-dir]
+```
+Copies `litellm_config.yaml` and `setenv` to `target-dir` (defaults to `$HOME`).
 ## Supported backends
 - **OpenRouter** – uses Anthropic‑compatible API contract via the `anthropic/` prefix.
-- **LM Studio (local)** – runs on `http://localhost:1234` and is exposed through LiteLLM.
+- **LM Studio (local)** – runs on `http://localhost:1234` and is exposed through LiteLLM. See [doc/LOCAL_AI.md](doc/LOCAL_AI.md) for local hardware/model details.
 
 ## Config
 - The `anthropic/` prefix forces LiteLLM to speak the Anthropic API contract required by Claude Code.
@@ -34,8 +41,4 @@ You can ask an AI assistant to tailor this configuration to your own environment
 ```
 I have a local LM Studio server running at http://my‑local‑host:8000. Please modify the `litellm_config.yaml` and `setenv` script so Claude Code routes to this endpoint.
 ```
-
-## Screenshots
-![GPU utilization](/doc/GPU_utilization.png)
-![Claude custom models](/doc/Claude-custom-models.png)
 
