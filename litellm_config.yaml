@@ -1,0 +1,21 @@
+model_list:
+  # OpenRouter models
+  - model_name: openai/gpt-oss-120b:free
+    litellm_params:
+      model: anthropic/openai/gpt-oss-120b:free # "anthropic/" prefix forces Anthropic-compatible API contract for Claude Code
+      api_key: os.environ/OPENROUTER_API_KEY
+      api_base: https://openrouter.ai/api # Backend endpoint URL for OpenRouter
+
+  - model_name: nvidia/nemotron-3-super-120b-a12b:free
+    litellm_params:
+      model: anthropic/nvidia/nemotron-3-super-120b-a12b:free # "anthropic/" prefix forces Anthropic-compatible API contract for Claude Code
+      api_key: os.environ/OPENROUTER_API_KEY
+      api_base: https://openrouter.ai/api # Backend endpoint URL for OpenRouter
+
+  # LM Studio local models
+  - model_name: qwen/qwen3.5-9b
+    litellm_params:
+      model: anthropic/qwen/qwen3.5-9b # "anthropic/" prefix forces Anthropic-compatible API contract for Claude Code
+      api_key: dummy
+      api_base: http://localhost:1234 # Backend endpoint URL for LM Studio local model
+      # custom_llm_provider: openai
