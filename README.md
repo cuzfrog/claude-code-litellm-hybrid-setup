@@ -1,7 +1,7 @@
 # Claude Code + LiteLLM Hybrid Routing Setup
 
 ## What this is
-This repository provides a ready‑to‑use hybrid routing configuration that connects Claude Code to a LiteLLM proxy, which in turn can route requests to multiple back‑ends such as OpenRouter or a local LM Studio instance.
+This repository provides an example hybrid routing configuration that connects Claude Code to a LiteLLM proxy, allowing for multiple back‑ends such as OpenRouter or a local LM Studio instance.
 
 ## Screenshots
 ![Claude custom models](/doc/Claude-custom-models.png)
@@ -9,7 +9,7 @@ This repository provides a ready‑to‑use hybrid routing configuration that co
 ## Prerequisites
 - Python 3.9+ and `pip`
 - LiteLLM package (`pip install litellm`)
-- WSL/Linux environment (Windows not officially supported)
+- MacOS/Linux/WSL
 - See the [LiteLLM quick‑start guide](https://docs.litellm.ai/docs/proxy/quick_start) for installation details.
 ## Installation
 
@@ -18,13 +18,11 @@ curl -LO https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-se
      -O https://raw.githubusercontent.com/cuzfrog/claude-code-litellm-hybrid-setup/main/setenv
 ```
 
-## Supported backend examples
-- **OpenRouter** – uses Anthropic‑compatible API contract via the `anthropic/` prefix. Requires `OPENROUTER_API_KEY` to be set in the environment.
-- **LM Studio (local)** – runs on `http://localhost:1234` and is exposed through LiteLLM. See [doc/LOCAL_AI.md](doc/LOCAL_AI.md) for a local hardware/model example.
-
 ## Config
-- The `anthropic/` prefix forces LiteLLM to speak the Anthropic API contract required by Claude Code.
-- `api_base` fields point to the appropriate backend endpoints. The local LM Studio endpoint has been changed to `http://localhost:1234`.
+- **OpenRouter** – `OPENROUTER_API_KEY` to be set in the environment.
+- **LM Studio** – See [doc/LOCAL_AI.md](doc/LOCAL_AI.md) for a local hardware/model example.
+- The `anthropic/` prefix tells LiteLLM to speak the Anthropic API contract.
+- `api_base` point to the Anthropic compatible endpoints.
 
 ## Start the proxy
 ```bash
@@ -32,9 +30,10 @@ litellm --config litellm_config.yaml
 ```
 This launches the LiteLLM proxy on the default port (`4000`).
 
-## Configure Claude Code
+## Configure for Claude Code
 ```bash
 . ./setenv
+claude
 ```
 Source the `setenv` script before invoking Claude Code. It sets environment variables such as `ANTHROPIC_API_KEY`, `ANTHROPIC_BASE_URL`, and `CLAUDE_CODE_SUBAGENT_MODEL` to point at the proxy.
 
