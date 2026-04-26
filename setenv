@@ -1,7 +1,7 @@
 #!/bin/bash
-
-# Configure Claude Code to route API requests through LiteLLM proxy
-# Usage: source this script in your current shell: `. ./setenv` or `source ./setenv`
+# This script configures environment variables for Claude Code to route through LiteLLM proxy.
+# Usage: source this file (e.g., `. ./setenv`) before running Claude Code.
+# It sets LITELLM_API_KEY, LITELLM_API_BASE, etc.
 
 export ANTHROPIC_API_KEY="" # must be explicitly set to empty
 export ANTHROPIC_BASE_URL=http://localhost:4000
