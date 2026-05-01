@@ -1,5 +1,3 @@
-.dev/
-.claude/
-
 # We recommend not to commit development doc. If you want to stage the content, comment out this line.
 .lissom/
+node_modules/
